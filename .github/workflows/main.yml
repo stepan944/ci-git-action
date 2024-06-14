@@ -1,0 +1,36 @@
+name: CI for Example Application
+
+on:
+  # Trigger on push events to the main branch
+  push:
+    branches: [ main ]
+
+  # Optional: Allow manual triggering of the workflow
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Select an operating system (e.g., ubuntu-latest, macos-latest, windows-latest)
+    steps:
+      - uses: actions/checkout@v3  # Checkout the repository code
+
+      # Install software (adjust based on your application's requirements)
+      - name: Install dependencies
+        run: |
+          # Example for Node.js (replace with your actual commands)
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+
+      # Clone the project (if applicable, adjust paths if needed)
+      - name: Clone project (if separate from repository)
+        run: git clone https://github.com/stepan944/ci-git-action.git
+
+      - name: Download dependencies (if using package managers like npm)
+        run: npm install
+
+      # Create a project build (adjust based on your build process)
+      - name: Build project
+        run: npm run build  # Example for npm scripts
+
+      - name: Run unit tests
+        run: npm test  # Example for npm test scripts
