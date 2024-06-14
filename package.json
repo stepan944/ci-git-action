@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "A brief description of your project",
   "scripts": {
-    "build": "webpack --config webpack.prod.config.js"  // Replace with your actual build command
+    "build": "webpack --config webpack.prod.config.js" 
   }
 }
