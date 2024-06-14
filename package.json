@@ -1,12 +1,8 @@
 {
-  "name": "gitaction",
+  "name": "ci-git-action",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A brief description of your project",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "build": "webpack --config webpack.prod.config.js"  // Replace with your actual build command
+  }
 }
